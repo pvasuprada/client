@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Dashboard from "./Dashboard";
+import Seats from "./Seats";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<App />} />
+        <Route path="login" element={<App />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="seats" element={<Seats />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
